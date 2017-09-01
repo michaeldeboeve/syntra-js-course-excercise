@@ -1,0 +1,37 @@
+.form__item { max-width: 100%; }
+
+input[type="text"],
+textarea {
+  @extend %basefont;
+  @extend %transition;
+  font-weight: 300;
+  display: block;
+  width: 100%;
+  border: 1px solid $accent;
+  border-radius: 0;
+  font-size: rem(16);
+  padding: 5px;
+  margin-bottom: 0;
+  display: block;
+  color: $default-font-color;
+  outline: none;
+
+  @include placeholder() {
+    color: $input-border-color;
+  }
+
+}
+
+input[type="text"]#name {
+  border-bottom-color: $input-border-color;
+
+  &.error {
+    border-color: $red;
+    background-color: lighten($red, 40);
+  }
+}
+
+textarea#description {
+  border-top-width: 0;
+  height: 100px;
+}

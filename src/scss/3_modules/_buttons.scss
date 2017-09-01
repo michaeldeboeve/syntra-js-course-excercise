@@ -1,0 +1,37 @@
+.btn {
+  font-weight: 300;
+  border: none;
+  font-size: rem(14);
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: .5em .7em;
+  background-color: $accent;
+  color: white;
+  transition: all .3s;
+  outline: none;
+  margin-top: 0;
+
+  &:hover {
+    background-color: darken($accent, 10);
+  }
+}
+
+
+
+.icn {
+  width: 16px;
+  display: block;
+
+  svg {
+    width: 100%;
+    height: auto;
+    fill: $md-grey-500;
+    transition: all .3s;
+  }
+
+  &:hover {
+    svg {
+      fill: $red;
+    }
+  }
+}

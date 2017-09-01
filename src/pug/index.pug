@@ -1,0 +1,19 @@
+extends templates/layout
+
+
+//- Variables
+block append vars
+  - var lang                  = 'en'
+  - var pageTitle             = 'My ToDO'
+  - var pageDescription       = 'Description'
+  - var bodyClass             = ''
+
+
+
+
+
+block contentMain
+  include templates/views/sections/header
+  include templates/views/sections/todoContainer
+  include templates/views/sections/todoTemplate
+  include templates/views/sections/todoIsEmptyTemplate

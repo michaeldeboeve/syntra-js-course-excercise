@@ -1,0 +1,35 @@
+var s = function(selector) {
+  if (!selector) {
+    return this;
+  }
+  if(typeof selector === 'string') {
+
+    if (/\s/.test(selector) || /\,/.test(selector)) {
+      // Multiple selectors
+      // console.log('Multiple selectors');
+      return document.querySelectorAll(selector);
+
+    } else {
+      // Single selector
+      // console.log('Single selector')
+
+      switch (selector.charAt(0)) {
+        case '#':
+          selector = selector.slice(1);
+          // console.log('is id: ' + selector);
+          return document.getElementById(selector);
+          break
+        case '.':
+          selector = selector.slice(1);
+          // console.log('is class: ' + selector);
+          return document.getElementsByClassName(selector);
+          break
+        default:
+          // console.log('is tag: ' + selector);
+          return document.getElementsByTagName(selector);
+      }
+
+    }
+
+  }
+}

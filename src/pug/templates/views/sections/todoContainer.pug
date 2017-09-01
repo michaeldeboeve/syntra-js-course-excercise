@@ -1,0 +1,12 @@
+.constrict
+  form.todo-form(action='#', method='post')
+    
+    .todo-form__item
+      input#name(type='text', name='name', placeholder='Title')
+        
+    .todo-form__item
+      textarea#description(name='description', placeholder='Description')
+    
+    button#btn--add.btn.btn--add Add item
+
+    ul#todo-list.todo-list  

@@ -1,0 +1,16 @@
+script#templateTodoItem(type="text/html")
+  li.todo(data-id="{{todoId}}" data-completed="{{todoCompleted}}")
+    
+    .todo__data
+      h3.todo__title {{todoTitle}}
+      p.todo__description {{todoDescription}}
+    
+    .todo__tools
+      input.custom-checkbox(type='checkbox', name='complete__{{todoId}}', id='complete__{{todoId}}', {{checked}})
+      label.custom-checkbox-label.todo__tools__check(for='complete__{{todoId}}') Done
+      
+      
+      a.todo__tools__delete(href='#')
+        i.icn.icn--delete
+          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', width='16', height='16', viewbox='0 0 32 32')
+            path(d='M6 32h20l2-22h-24zM20 4v-4h-8v4h-10v6l2-2h24l2 2v-6h-10zM18 4h-4v-2h4v2z')

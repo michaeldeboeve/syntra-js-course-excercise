@@ -1,0 +1,20 @@
+// ==========================================================================
+// Extends and Helpers
+// ==========================================================================
+
+%borderbox { box-sizing: border-box; }
+
+%left { float: left; }
+%right { float: right; }
+%clear { @include clearfix(); }
+
+%transition { transition: if(variable-exists(base-transition), $base-transition, 'all .3s ease');}
+
+
+%basefont { font-family: if(variable-exists(default-font-family), $default-font-family, sans-serif); }
+
+%monofont { font-family: if(variable-exists(monospace-font-family), $monospace-font-family, monospace); }
+%titlefont {
+  font-family: if(variable-exists(title-font-family), $title-font-family, sans-serif);
+  text-transform: uppercase;
+}

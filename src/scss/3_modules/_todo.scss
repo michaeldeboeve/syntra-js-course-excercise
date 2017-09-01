@@ -1,0 +1,85 @@
+.todo {
+  display: flex;
+
+  & + & { margin-top: 2px; }
+}
+
+
+
+// Todo Structure
+.todo__data,
+.todo__tools {
+  @extend %transition;
+  background-color: $todo-bg;
+  padding: 10px;
+
+  .todo:hover & {
+    background-color: darken($todo-bg,3);
+  }
+}
+
+.todo__data {
+  flex-grow: 1;
+  border-left: 5px solid $accent;
+}
+
+.todo__tools {
+  width: 70px;
+  text-align: left;
+  margin-left: 2px;
+  position: relative;
+  font-size: rem(14);
+  overflow: hidden;
+}
+
+.todo__tools__check,
+.todo__tools__delete {
+  position: absolute;
+}
+
+.todo__tools__delete {
+  right: 15px;
+}
+
+.todo__tools__check {
+  left: 15px;
+}
+
+
+
+
+// Todo States
+.todo[data-completed="true"] {
+  opacity: .4;
+  .todo__title,
+  .todo__description {
+    text-decoration: line-through;
+  }
+  .todo__data {
+    border-left-color: $done;
+  }
+}
+
+
+
+
+
+
+// Todo Content
+.todo__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: rem(16);
+}
+
+.todo__description {
+  font-size: rem(14);
+  font-style: italic;
+  &:empty { display: none; }
+
+  .todo__title + & {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed $input-border-color;
+  }
+}

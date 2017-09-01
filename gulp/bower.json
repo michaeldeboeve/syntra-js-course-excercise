@@ -1,0 +1,22 @@
+{
+  "name": "todolist",
+  "version": "0.0.0",
+  "authors": [
+    "Michaël de Boevé"
+  ],
+  "description": "My todo List Projects",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "michaeldeboeve@gmail.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

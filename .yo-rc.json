@@ -1,0 +1,39 @@
+{
+  "generator-robonkey": {
+    "environmentOption": "static",
+    "gulpDirOption": true,
+    "gulpCmdOption": false,
+    "gulpTypeOption": false,
+    "projectUrl": "mytodo.localhost",
+    "projectName": "todolist",
+    "projectNameJson": "todolist",
+    "projectDescription": "My todo List Projects",
+    "projectVersion": "0.0.0",
+    "projectAuthor": "Michaël de Boevé",
+    "authorEmail": "michaeldeboeve@gmail.com",
+    "projectLicense": "MIT",
+    "mainDir": "app",
+    "assetsDir": "assets",
+    "cssDir": "css",
+    "imgDir": "img",
+    "jsDir": "js",
+    "libDir": "lib",
+    "fontDir": "fonts",
+    "templateOption": "pug",
+    "baseStyleOption": "reset",
+    "preproOption": "scss",
+    "mixinOption": "default",
+    "mqOption": "default",
+    "gridOption": "none",
+    "postcssOption": [
+      "autoprefixer"
+    ],
+    "javascriptOption": "vanilla",
+    "scriptsOption": [],
+    "iconsType": "none",
+    "customIconfontOption": false,
+    "svgiconsOption": false,
+    "rootFolder": "..",
+    "nodeModules": "../../gulp/node_modules/"
+  }
+}

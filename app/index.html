@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js en" lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My ToDO</title>
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="constrict">
+        <h1 id="maintitle">test</h1>
+      </div>
+    </header>
+    <div class="constrict">
+      <form class="todo-form" action="#" method="post">
+        <div class="todo-form__item"><input id="name" type="text" name="name" placeholder="Title"></div>
+        <div class="todo-form__item"><textarea id="description" name="description" placeholder="Description"></textarea></div><button class="btn btn--add" id="btn--add">Add item</button>
+        <ul class="todo-list" id="todo-list"> </ul>
+      </form>
+    </div>
+    <script id="templateTodoItem" type="text/html">
+      <li class="todo" data-id="{{todoId}}" data-completed="{{todoCompleted}}">
+        <div class="todo__data">
+          <h3 class="todo__title">{{todoTitle}}</h3>
+          <p class="todo__description">{{todoDescription}}</p>
+        </div>
+        <div class="todo__tools"><input class="custom-checkbox" type="checkbox" name="complete__{{todoId}}" id="complete__{{todoId}}" {{checked}}><label class="custom-checkbox-label todo__tools__check" for="complete__{{todoId}}">Done</label><a class="todo__tools__delete" href="#"><i class="icn icn--delete"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 32 32"><path d="M6 32h20l2-22h-24zM20 4v-4h-8v4h-10v6l2-2h24l2 2v-6h-10zM18 4h-4v-2h4v2z"></path></svg></i></a></div>
+      </li>
+    </script>
+    <script id="templateTodoEmpty" type="text/html">
+      <li class="is-empty" id="is-empty">
+        <h3 class="is-empty__title">Nothing todo.</h3>
+        <p class="is-empty__description">Go outside!</p>
+      </li>
+    </script>
+    <script src="assets/js/script.js"></script>
+  </body>
+
+</html>

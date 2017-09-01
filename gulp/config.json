@@ -1,0 +1,58 @@
+{
+  "projectURL": "mytodo.localhost",
+  "browsersync": {
+    "server": "../app"
+  },
+  "postcss": {
+    "src": "../app/assets/css/style.css",
+    "build": "../app/assets/css/"
+  },
+  "images": {
+    "src": "../src/img/**/*",
+    "build": "../app/assets/img/"
+  },
+  "html": {
+    "src": "../app/**/*.html",
+    "build": "../app/"
+  },
+  "tasks": {
+    "main": [
+      "html",
+      "images",
+      "scripts",
+      "styles"
+    ],
+    "default": [
+      "main",
+      "watch",
+      "browser-sync"
+    ],
+    "build": [
+      "main",
+      "html-build",
+      "scripts-build",
+      "styles-build",
+      "removeDevFiles"
+    ]
+  },
+  "styles": {
+    "src": "../src/scss/style.scss",
+    "src_files": "../src/scss/**/*.scss",
+    "build_srcsmap": "../app/assets/css/",
+    "build": "../app/assets/css/",
+    "src_lib": "../app/assets/css/**/*.css",
+    "build_lib": "../app/assets/css/"
+  },
+  "browsers": "last 3 versions, > 1%",
+  "scripts": {
+    "src": "../src/js/**/*.js",
+    "build": "../app/assets/js",
+    "src_lib": "../app/assets/js/lib/**/*.js",
+    "build_lib": "../app/assets/js/lib/"
+  },
+  "pug": {
+    "src": "../src/pug/*.pug",
+    "watch": "../src/pug/**/*.pug",
+    "build": "../app/"
+  }
+}

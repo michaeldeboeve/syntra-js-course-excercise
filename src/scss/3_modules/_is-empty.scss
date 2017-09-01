@@ -1,0 +1,14 @@
+.is-empty {
+  border: 1px solid $input-border-color;
+  padding: 20px;
+  border-radius: 0;
+  &__title {
+    color: $accent;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  &__description {
+    font-size: 20px;
+    font-style: italic;
+  }
+}
