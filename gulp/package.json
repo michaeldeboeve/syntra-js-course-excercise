@@ -29,13 +29,13 @@
     "gulp-inject": "^4.0.0"
   },
   "dependencies": {
-    "superlatief-colors": "*",
-    "superlatief-mixins": "*",
-    "superlatief-mediaqueries": "*",
+    "autoprefixer": "^6.3.3",
+    "gulp-postcss": "^6.1.0",
+    "gulp-pug": "^2.0.0",
     "gulp-sass": "^2.2.0",
     "gulp-sass-glob": "^1.0.4",
-    "gulp-postcss": "^6.1.0",
-    "autoprefixer": "^6.3.3",
-    "gulp-pug": "^2.0.0"
+    "superlatief-colors": "*",
+    "superlatief-mediaqueries": "0.0.8",
+    "superlatief-mixins": "0.0.10"
   }
 }
