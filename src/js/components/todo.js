@@ -11,10 +11,10 @@ var todo = (function(){
 
   return {
     init: function(settings){
-      todoTemplate  = document.getElementById(settings.todoTemplate);
-      emptyTemplate = document.getElementById(settings.emptyTemplate);
-      btnAdd        = document.getElementById(settings.addButtonId);
-      targetList    = document.getElementById(settings.targetList);
+      todoTemplate  = s.id(settings.todoTemplate);
+      emptyTemplate = s.id(settings.emptyTemplate);
+      btnAdd        = s.id(settings.addButtonId);
+      targetList    = s.id(settings.targetList);
       storageName   = settings.localStorageName;
       mainTitle     = settings.mainTitle;
 
@@ -22,20 +22,20 @@ var todo = (function(){
       templateHtmlEmpty = emptyTemplate.innerHTML;
 
       // Set the title
-      document.getElementById('maintitle').innerHTML = mainTitle;
+      s.id('maintitle').innerHTML = mainTitle;
 
       // Set Focus
-      this.setFocus('name');
+      s.id('name').focus();
 
       if(localStorage[storageName]){
-        todos = storage.get(storageName);
+        todos = storage.get(storageName, 'JSON');
         for(var i = 0; i<todos.length; i++) {
           this.addToDOM(todos[i]);
         }
 
         if(todos.length === 0){
           todoId = 0;
-          todo.showIsEmpty(true);
+          todo.showWhenEmpty(true);
         } else {
           todoId = todos[i-1].todoId;
         }
@@ -49,24 +49,24 @@ var todo = (function(){
         todoId = todos[i-1].todoId;
 
       } else {
-        this.showIsEmpty(true);
+        this.showWhenEmpty(true);
       }
 
 
       // Add Button
       btnAdd.addEventListener('click', function(e){
-        var name = document.getElementById('name');
-        var description = document.getElementById('description');
+        var name = s.id('name');
+        var description = s.id('description');
 
         if(!todo.add(name.value, description.value)){
           name.setAttribute('class', 'error');
-          todo.setFocus('name');
+          s.id('name').focus();
         } else {
-          todo.showIsEmpty(false);
+          todo.showWhenEmpty(false);
           name.removeAttribute('class');
           name.value = '';
           description.value = '';
-          todo.setFocus('name');
+          s.id('name').focus();
         }
         e.preventDefault();
       });
@@ -97,19 +97,17 @@ var todo = (function(){
 
       })
     },
-    setFocus: function(id){
-      document.getElementById(id).focus();
-    },
-    showIsEmpty: function(status){
+    showWhenEmpty: function(status){
       switch (status) {
         case true:
           if(todos.length == 0) {
             targetList.insertAdjacentHTML('beforeend', emptyTemplate.innerHTML);
+            storage.delete(storageName);
           }
           break;
         case false:
           if(todos.length == 1) {
-            document.getElementById('is-empty').remove();
+            s.id('is-empty').remove();
           }
           break;
       }
@@ -133,7 +131,7 @@ var todo = (function(){
 
         // Add to DOM and update local storage
         this.addToDOM(item);
-        storage.overwriteAll(storageName, todos);
+        storage.set(storageName, todos, 'JSON');
 
         return true
       }
@@ -150,9 +148,9 @@ var todo = (function(){
             }
           }
 
-          storage.overwriteAll(storageName, todos);
+          storage.set(storageName, todos, 'JSON');
           // console.log(items[i]);
-          todo.showIsEmpty(true);
+          todo.showWhenEmpty(true);
           return;
         }
       }
@@ -171,7 +169,7 @@ var todo = (function(){
           }
 
 
-          storage.overwriteAll(storageName, todos);
+          storage.set(storageName, todos, 'JSON');
           return;
         }
       }

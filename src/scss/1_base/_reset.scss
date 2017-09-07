@@ -45,12 +45,3 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
 }
-
-html {
-  box-sizing: if(variable-exists(root-box-sizing), $root-box-sizing, border-box);
-}
-*,
-::before,
-::after {
-  box-sizing: inherit;
-}

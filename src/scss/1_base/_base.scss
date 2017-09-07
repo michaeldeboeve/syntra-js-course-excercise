@@ -2,6 +2,14 @@
 // Base Type
 // ==========================================================================
 
+html {
+  box-sizing: if(variable-exists(root-box-sizing), $root-box-sizing, border-box);
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 html, body {
   @extend %basefont;
   color: $default-font-color;

@@ -31,7 +31,7 @@ window.addEventListener('load', function(){
 
   todo.init({
     "mainTitle": "My Todo's",
-    "localStorageName": "todos",
+    "localStorageName": "myTodos",
     "targetList": "todo-list",
     "addButtonId": "btn--add",
     "todoTemplate": "templateTodoItem",

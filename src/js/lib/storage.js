@@ -1,10 +1,21 @@
 var storage = (function(){
   return {
-    overwriteAll: function(db, arr){
-      localStorage[db] = JSON.stringify(arr);
+    set: function(keyName, keyValue, dataType = null){
+      if(dataType === 'JSON' || dataType === 'json'){
+        localStorage.setItem(keyName, JSON.stringify(keyValue));
+      } else {
+        localStorage.setItem(keyName, keyValue);
+      }
     },
-    get: function(db){
-      return JSON.parse(localStorage[db]);
+    get: function(keyName, dataType = false){
+      if(dataType === 'JSON' || dataType === 'json'){
+        return JSON.parse(localStorage.getItem(keyName));
+      } else {
+        return localStorage.getItem(keyName);
+      }
+    },
+    delete: function(keyName){
+      localStorage.removeItem(keyName);
     }
   }
 })();
